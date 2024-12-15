@@ -23,6 +23,15 @@ function navSlide() {
     // Animação do ícone do menu
     burger.classList.toggle("toggle");
   });
+
+  // Fechar o menu ao clicar em um link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("nav-active");
+      burger.classList.remove("toggle");
+      navLinks.forEach((item) => (item.style.animation = "")); // Remove animação residual
+    });
+  });
 }
 
 // Função para rolagem suave
