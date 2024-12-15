@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  line-height: 2;
+  background-color: #1e2a38;
+  color: #000000;
+  padding: 20px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  color: #00b8d4;
+}
+
+#cabecalho {
+  position: relative;
+  background-image: url("../img/programacao_00003.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin-bottom: 20px;
+}
+
+#cabecalho::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor preta semitransparente */
+  z-index: 1;
+}
+
+#cabecalho h1,
+#cabecalho p,
+#cabecalho .btn {
+  position: relative;
+  z-index: 2; /* Garante que o texto fique acima do overlay */
+}
+
+section {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #5c6bc0;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+details {
+  margin-bottom: 10px;
+}
+
+/* DESKTOP NAV */
+
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.8);
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.burger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: none;
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  text-decoration-color: black;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+/* head */
+
+#cabecalho {
+  background-color: #404b85;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* sobre */
+
+#sobre {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Programação */
+
+#programacao {
+  text-align: center;
+}
+
+/* Incluso */
+
+#incluso {
+  text-align: center;
+}
+
+/* Instrutores */
+
+#instrutores {
+  text-align: center;
+}
+
+/* FAQ */
+
+#faq {
+  text-align: center;
+}
+
+/* inscrição */
+
+#inscricao {
+  text-align: center;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #5c6bc0;
+  color: white;
+  border-radius: 5px;
+}
+
+summary:hover {
+  background-color: #3f51b5;
+}
+
+details p {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5c6bc0;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #3f51b5;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #5c6bc0;
+  color: white;
+}
+
+/* Mobile Nav */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    top: 0;
+    background-color: #404b85;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .nav-links li a {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  .nav-links li {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 0.5s;
+  }
+
+  .burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger.toggle .line2 {
+    opacity: 0;
+  }
+
+  .burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
